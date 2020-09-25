@@ -8,8 +8,11 @@
     = stylesheet_link_tag 'application', media: 'all'
     = javascript_pack_tag 'application'
   %body
-    - if notice
-      %p.notice= notice
-    - if alert
-      %p.alert= alert
-    = yield
+    .container
+      - if notice
+        %p.notice= notice
+      - if alert
+        %p.alert= alert
+      %p
+        = yield
+    %br
