@@ -1,0 +1,13 @@
+%nav
+  %ul.pagination.justify-content-end
+    - if page > 0
+      %li.page-item
+        = link_to "&lt;&lt; Previous".html_safe,
+        customers_path(keywords: keywords, page: page - 1),
+        title: "Previous Page",
+        class: "page-link"
+    %li.next
+      = link_to "Next &gt;&gt;".html_safe,
+      customers_path(keywords: keywords, page: page + 1),
+      title: "Next Page",
+      class: 'page-link'

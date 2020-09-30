@@ -1,24 +1,3 @@
-%header
-  %h2 Customer Search
-%section.search-form
-  = form_for :customers, as: :keywords, method: :get do |f|
-    .input-group.input-group-lg
-      = label_tag :keywords, nil, class: 'sr-only'
-      = text_field_tag :keywords, nil, placeholder: "First Name, Last Name, or Email Address", class: 'form-control input-lg'
-      %span
-        = submit_tag "Find Customers", class: 'btn btn-primary btn-lg'
-%br/
-%section.search-results
-  %header
-    %h3 Results
-  %ol.list-group
-    - @customers.each do |customer|
-      %li.list-group-item.clearfix
-        %h3.float-right
-          %small.text-uppercase Joined
-          = l customer.created_at.to_date
-        %h2
-          = customer.first_name
-          = customer.last_name
-          %small= customer.username
-        %h4= customer.email
+%section
+  %shine-customer-search
+= javascript_pack_tag "customers"
